@@ -65,10 +65,19 @@ module.exports = function (socket) {
 
   // broadcast a user's message to other users
   socket.on('send:message', function (data) {
+
     socket.broadcast.emit('send:message', {
       user: name,
       text: data.text
     });
+
+    // Resposta do robo
+    setTimeout(function() {
+      var serverAnswer = {answer: 'Respondendo a sua pergunta'};
+
+      socket.emit('server:answer', serverAnswer);
+      socket.broadcast.emit('server:answer', serverAnswer);
+    }, 2000);
   });
 
   // validate a user's name change, and broadcast it on success

@@ -110,10 +110,12 @@ var ChatApp = React.createClass({
 	getInitialState: function(){
 
 		socket.on('init', this.initialize);
-		socket.on('send:message', this.messageRecieve);
+		socket.on('server:answer', this.serverResponse);
+    socket.on('send:message', this.messageRecieve);
 		socket.on('user:join', this.userJoined);
 		socket.on('user:left', this.userLeft);
 		socket.on('change:name', this.userChangedName);
+    
 
 		return {users: [], messages:[], text: ''};
 	},
@@ -122,7 +124,15 @@ var ChatApp = React.createClass({
 		this.setState({ users: data.users, user: data.name});
 	},
 
-	messageRecieve: function(message){
+	serverResponse: function(message){
+    this.state.messages.push({
+      user: 'SERVER',
+      text : message
+    });
+    this.setState();
+  },
+
+  messageRecieve: function(message){
 		this.state.messages.push(message);
 		this.setState();
 	},
