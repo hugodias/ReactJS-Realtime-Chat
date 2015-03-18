@@ -48,6 +48,8 @@ var userNames = (function () {
   };
 }());
 
+var r = require('../robot.js');
+
 // export function for listening to the socket
 module.exports = function (socket) {
   var name = userNames.getGuestName();
@@ -73,10 +75,18 @@ module.exports = function (socket) {
 
     // Resposta do robo
     setTimeout(function() {
-      var serverAnswer = {answer: 'Respondendo a sua pergunta'};
 
-      socket.emit('server:answer', serverAnswer);
-      socket.broadcast.emit('server:answer', serverAnswer);
+      var question = data.text;
+
+      var Robot = r(question);
+
+      console.log(Robot.ask());
+
+      //var serverAnswer = Robot.ask(question);
+
+      //socket.emit('server:answer', serverAnswer);
+
+      //socket.broadcast.emit('server:answer', serverAnswer);
     }, 2000);
   });
 
