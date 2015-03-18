@@ -1,10 +1,11 @@
 var S = require('string');
 
-module.exports = function(question) {
+module.exports = function(question, username) {
 
   var answers = {
     // Ex: Quantos anos voce tem? | Qual sua idade?
-    "idade|anos": "Tenho 946485 anos, voce?"
+    "idade|anos": "Tenho 946485 anos, voce?",
+    "oi|ola|tudo bem|como vai|blz|joia|sussa|que que pega": "Oi " + username + " tudo bem?"
   }
 
   return {
@@ -19,7 +20,7 @@ module.exports = function(question) {
         }
       }
 
-      return "Desculpe, não entendi sua pergunta.";
+      return false;
     }
   };
 }

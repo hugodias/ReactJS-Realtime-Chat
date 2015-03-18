@@ -75,18 +75,18 @@ module.exports = function (socket) {
 
     // Resposta do robo
     setTimeout(function() {
+      var serverAnswer;
+      // Inicializa o Robo com a pergunta do usuario
+      var Robot = r(data.text, name);
 
-      var question = data.text;
+      // O rebo responde apenas se consegui chegar a uma conclusao
+      // sobre a pergunta do usuario
+      if(serverAnswer = Robot.ask() ){
+        socket.emit('server:answer', serverAnswer);
 
-      var Robot = r(question);
+        socket.broadcast.emit('server:answer', serverAnswer);        
+      }
 
-      console.log(Robot.ask());
-
-      //var serverAnswer = Robot.ask(question);
-
-      //socket.emit('server:answer', serverAnswer);
-
-      //socket.broadcast.emit('server:answer', serverAnswer);
     }, 2000);
   });
 

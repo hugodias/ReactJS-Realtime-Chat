@@ -126,7 +126,7 @@ var ChatApp = React.createClass({
 
 	serverResponse: function(message){
     this.state.messages.push({
-      user: 'SERVER',
+      user: 'Robo',
       text : message
     });
     this.setState();
