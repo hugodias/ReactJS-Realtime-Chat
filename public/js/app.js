@@ -38,7 +38,6 @@ var MessageList = React.createClass({
 		}
 		return (
 			<div class='messages'>
-				<h2> Conversation: </h2>
 				{ this.props.messages.map(renderMessage)} 
 			</div>
 		);
@@ -68,9 +67,8 @@ var MessageForm = React.createClass({
 	render: function(){
 		return(
 			<div class='message_form'>
-				<h3>Write New Message</h3>
 				<form onSubmit={this.handleSubmit}>
-					<input onChange={this.changeHandler} value={this.state.text} />
+					<input onChange={this.changeHandler} value={this.state.text} placeholder="Qual sua dúvida, jovem?" />
 				</form>
 			</div>
 		);
@@ -126,7 +124,7 @@ var ChatApp = React.createClass({
 
 	serverResponse: function(message){
     this.state.messages.push({
-      user: 'Robo',
+      user: 'Mocha',
       text : message
     });
     this.setState();
@@ -192,11 +190,18 @@ var ChatApp = React.createClass({
 
 	render : function(){
 		return (
-			<div>
-				<UsersList users={this.state.users} />
-				<MessageList messages={this.state.messages} />
-				<MessageForm onMessageSubmit={this.handleMessageSubmit} user={this.state.user} />
-				<ChangeNameForm onChangeName={this.handleChangeName} />
+			<div class="container">
+        <div class="row">
+          <div class="col-md-12">
+				    <MessageList messages={this.state.messages} />
+          </div>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+          <div class="container">
+            <MessageForm onMessageSubmit={this.handleMessageSubmit} user={this.state.user} />    
+          </div>
+        </nav>        
+				
 			</div>
 		);
 	}

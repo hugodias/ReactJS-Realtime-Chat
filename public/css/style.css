@@ -1,19 +1,35 @@
 body{
-	width: 600px;
 	margin: 0 auto;
-	border: 5px solid tomato;
+	
 }
+
 .users{
 	float : right;
 	margin-right: 1.5em;
 }
 .messages {
-	width: 400px;
+  background: #0D7E83;
+  color: #FFF;
+  font-weight: bold;
 	margin: 1em;
-	border : 1px solid black;
+	border : 1px dashed #EEE;
 	padding: 1em;
 }
 .message_form,
 .change_name_form{
 	padding: 1em;
+}
+
+form input{
+  border: 2px solid #E0E0E0;
+  padding: 10px;
+  width: 100%;
+}
+
+form input:focus{
+  outline: none;
+}
+
+.navbar-fixed-bottom{
+  
 }
