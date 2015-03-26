@@ -1,25 +1,27 @@
 var S = require('string');
-
+var AI = require('./intel.js');
 module.exports = function(question, username) {
 
   var robotName = 'Mocha';
 
-  var answers = {
-    // Ex: Quantos anos voce tem? | Qual sua idade?
-    "idade|anos": "Tenho 946485 anos, voce?",
-    "((.*)seu(.*)nome)|((.*)(você|voce)(.*)chama)": "Meu nome é " + robotName + ", e o seu?",
-    "oi|ola|tudo bem|como vai|blz|joia|sussa|que que pega|e ai": "Oi " + username + " tudo bem?"
-  }
+  // Nome do robo
+  AI.setRobotName(robotName);
 
+  // Nome do usuario
+  AI.setUsername(username);
+  
   return {
     ask: function() {
 
-      for (var key in answers) {
+      // Faz o loop em todas as perguntas
+      for (var key in AI.answers) {
 
+        // Identifica potenciais respostas atraves de expressao regular
         var r = new RegExp(key, "ig");
 
+        // Retorna apenas se encontrada uma resposta para a pergunta
         if(question.match(r) != null) {
-          return answers[key];
+          return AI.answers[key];
         }
       }
 
