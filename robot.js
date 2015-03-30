@@ -9,19 +9,22 @@ module.exports = function(question, username) {
 
   // Nome do usuario
   AI.setUsername(username);
-  
+
   return {
     ask: function() {
 
+      var answers = AI.answers();
+
       // Faz o loop em todas as perguntas
-      for (var key in AI.answers) {
+      for (var key in answers) {
 
         // Identifica potenciais respostas atraves de expressao regular
         var r = new RegExp(key, "ig");
 
         // Retorna apenas se encontrada uma resposta para a pergunta
         if(question.match(r) != null) {
-          return AI.answers[key];
+
+          return answers[key];
         }
       }
 

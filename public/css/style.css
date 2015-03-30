@@ -1,35 +1,45 @@
-body{
-	margin: 0 auto;
-	
+body {
+    margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
 }
 
-.users{
-	float : right;
-	margin-right: 1.5em;
+.users {
+    float: right;
+    margin-right: 1.5em;
 }
+
 .messages {
-  background: #0D7E83;
-  color: #FFF;
-  font-weight: bold;
-	margin: 1em;
-	border : 1px dashed #EEE;
-	padding: 1em;
+    background: #FFF;
+    color: RGB(97, 50, 0);
+    font-weight: bold;
+    margin: 1em;
+    font-size: 20px;
+    border: 1px dashed #EEE;
+    padding: 1em;
 }
+
 .message_form,
-.change_name_form{
-	padding: 1em;
+.change_name_form {
+    padding: 1em;
 }
 
-form input{
-  border: 2px solid #E0E0E0;
-  padding: 10px;
-  width: 100%;
+form input {
+    border: 2px solid #E0E0E0;
+    background: #EEE;
+    color: #333;
+    padding: 10px;
+    width: 100%;
 }
 
-form input:focus{
-  outline: none;
+form input:focus {
+    outline: none;
 }
 
-.navbar-fixed-bottom{
-  
+.navbar-fixed-bottom {
+
+}
+
+.message {
+    border-bottom: 1px dashed #EEE;
+    padding: 20px 0;
 }

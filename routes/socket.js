@@ -48,11 +48,13 @@ var userNames = (function () {
   };
 }());
 
+var Chance = require('chance');
+var chance = new Chance();
 var r = require('../robot.js');
 
 // export function for listening to the socket
 module.exports = function (socket) {
-  var name = userNames.getGuestName();
+  var name = chance.name();
 
   // send the new user their name and a list of users
   socket.emit('init', {
