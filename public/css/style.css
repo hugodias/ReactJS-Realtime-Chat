@@ -9,6 +9,7 @@ body {
 }
 
 .messages {
+    min-height: 500px;
     background: #FFF;
     color: RGB(97, 50, 0);
     font-weight: bold;

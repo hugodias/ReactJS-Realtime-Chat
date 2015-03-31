@@ -5,6 +5,15 @@ var socket = io.connect();
 
 var Messages = [];
 
+var MessagePicture = React.createClass({
+  render: function() {
+    return (
+      <img src={this.props.picture} class="img-responsive"/>
+    )
+  }
+});
+
+
 var Message = React.createClass({
     render: function () {
         return (
@@ -13,10 +22,13 @@ var Message = React.createClass({
                     <div class="col-xs-1">
                         <img src={this.props.picture} class="img-responsive"/>
                     </div>
-                    <div class="col-xs-11">
+                    <div class="col-xs-9">
                         <strong>{this.props.user}</strong>
                         :
-				        {this.props.text}
+                        <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>
+                    </div>
+                    <div class="col-xs-2">
+                      {this.props.messageImage ? <MessagePicture picture={this.props.messageImage}/> : null}
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -25,13 +37,14 @@ var Message = React.createClass({
     }
 });
 
+
 var MessageList = React.createClass({
     render: function () {
         var renderMessage = function (message) {
-            return <Message user={message.user} text={message.text} picture={message.picture} />
+            return <Message user={message.user} text={message.text} picture={message.picture} messageImage={message.messageImage} />
         }
         return (
-            <div class='messages'>
+            <div class='messages step1' id='msgcontainer'>
 				{ this.props.messages.map(renderMessage)}
             </div>
         );
@@ -61,7 +74,7 @@ var MessageForm = React.createClass({
 
     render: function () {
         return (
-            <div class='message_form'>
+            <div class='message_form' id="msgform">
                 <form onSubmit={this.handleSubmit}>
                     <input autoFocus type="text" onChange={this.changeHandler} value={this.state.text} placeholder="Qual sua dúvida, jovem?" />
                 </form>
@@ -87,7 +100,7 @@ var ChatApp = React.createClass({
             users: [],
             messages: [],
             text: '',
-            maxMessages: 5,
+            maxMessages: 2,
             robotPicture: '/img/robot.jpg',
             robotName: 'Mocha',
             picture: '/img/user.png'
@@ -144,9 +157,6 @@ var ChatApp = React.createClass({
     },
 
     handleMessageSubmit: function (message) {
-
-        console.log(message);
-
         this.appendMessage(message.user, message.text, message.picture);
 
         this.setState();
@@ -162,10 +172,14 @@ var ChatApp = React.createClass({
     },
 
     appendMessage: function (username, message, picture) {
+        var response = message.response ? message.response : message;
+        var messageImg = message.image ? message.image : null;
+
         this.state.messages.push({
             user: username,
-            text: message,
-            picture: picture
+            text: response,
+            picture: picture,
+            messageImage: messageImg
         });
 
         this.removeOldMessages();
