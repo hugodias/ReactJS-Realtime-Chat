@@ -1,15 +1,17 @@
-# ReactJS Socket.io Chat Application
+# Robo Barista
 
-See This Blog Post : [ReactJS and Socket.IO Chat Application](http://danialk.github.io/blog/2013/06/16/reactjs-and-socket-dot-io-chat-application/)
+Este robô responde perguntas sobre café
 
-## Running it
+## Rodando
 
-First, grab the dependencies with npm:
+Depois de fazer o download ou clone:
 
     npm install
 
-Then run the app like so:
+Para rodar use node ou foreman
 
     node app.js
+    // OU
+    foreman start
 
-And navigate to `localhost:3000`
+O Robo estará ativo em http://localhost:5000
