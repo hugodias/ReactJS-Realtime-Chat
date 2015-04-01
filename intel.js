@@ -19,12 +19,12 @@ module.exports = {
   answers: function () {
     return {
             // Qual a idade do robo
-            "((.*)?(você|voce|sua)(.*)?(idade|anos)(.*)?": {
+            "((.*)?(você|voce|sua)(.*)?(idade|anos)(.*)?)": {
               response: "Tenho 946485 anos, voce?",
               image: "http://placehold.it/500x500"
             },
             // Qual o nome do robo
-            "((.*)seu(.*)nome)|((.*)(você|voce)(.*)chama)|(quem é você|e você|é você))": {
+            "(((.*)?seu(.*)?nome)|((.*)?(você|voce)(.*)?chama)|((.*)?(quem é você|e você|é você)(.*)?))": {
               response: "Meu nome é " + this.getRobotName() + ",respondo perguntas sobre café, e o seu?",
               image: null
             },
@@ -33,6 +33,10 @@ module.exports = {
               response: "Oi " + this.getUsername() + " tudo bem?",
               image: null
             },
+            "((.*)?(o que|significa|o quê|é|significado|defina|definição|fazer)(.*)?(café expresso|expresso)(.*)?)": {
+              response: "<p>Um café expresso (do italiano caffè espresso), frequentemente referido simplesmente como expresso (ou ainda internacionalmente espresso), é um método de preparar café através da passagem de água quente (não fervente) sob alta pressão pelo café moído. O café expresso tradicional, em máquina industrial, é feito sob pressão de novecentos a mil quilopascais (nove a dez atmosferas ou bars), o que explica o termo expresso que aqui tem o sentido de exprimir ou espremer, ao contrário do que muitos pensam não tem originalmente o significado de rápido (este é apenas uma coincidência da automatização), portanto em uma tradução mais contextual o seu nome poderia ser café espremido e por isto muitos preferem manter o original em Italiano usando o termo espresso ou café espresso.</p>",
+              image: "http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Espresso_01.jpg/300px-Espresso_01.jpg"
+            },            
             // Conceito
             "((.*)(o que é|o que|significa|o que|significado)(.*)(café|cafe)(.*))": {
               response: "<p>O café é uma bebida produzida a partir dos grãos torrados do fruto do cafeeiro. É servido tradicionalmente quente, mas também pode ser consumido gelado. O café é um estimulante, por possuir cafeína — geralmente 80 a 140 mg para cada 207 ml dependendo do método de preparação</p><p>Em alguns períodos da década de 1980, o café era a segunda mercadoria mais negociada no mundo por valor monetário, atrás apenas do petróleo.2 Este dado estatístico ainda é amplamente citado, mas tem sido impreciso por cerca de duas décadas, devido à queda do preço do café durante a crise do produto na década de 1990, reduzindo o valor total de suas exportações. Em 2003, o café foi o sétimo produto agrícola de exportação mais importante em termos de valor, atrás de culturas como trigo, milho e soja.</p>",
@@ -98,10 +102,6 @@ module.exports = {
             "((.*)?(como fazer|como faz|fazer)(.*)?(café|cafe)(.*)?)": {
               response: "<p>O jeito que a vovó fazia café, o processo de “coar” envolve colocar o pó dentro de um coador de pano, ao mesmo tempo em que se passa água aquecida em uma panela ou chaleira por ele. O coador é disposto em cima de uma xícara ou bule enquanto a água passa pelo pó. Um dos meios de preparo é esquentar brevemente a água e misturar, a ela, o pó de café. Não deixe que a água levante fervura, o que torna o café mais amargo.</p><p>Você também pode usar filtros de papel para a coagem, nesse caso será preciso um pequeno porta-filtro de tamanho compatível com o tamanho de filtro a ser utilizado. Depois de usado, descarte o filtro no lixo. Como fazer? Use uma colher de sopa para medir o tanto de café que você deseja. Para um litro de água, utilize entre 5 e 6 colheres de sopa cheia.</p>",
               image: "http://eglu.pontofrio.com.br/wp-content/uploads/2013/05/guia-do-solteiro-cafe.jpg"
-            },
-            "((.*)?(o que|significa|o quê|é|significado|defina|definição)(.*)?(café expresso|expresso)(.*)?)": {
-              response: "<p>Um café expresso (do italiano caffè espresso), frequentemente referido simplesmente como expresso (ou ainda internacionalmente espresso), é um método de preparar café através da passagem de água quente (não fervente) sob alta pressão pelo café moído. O café expresso tradicional, em máquina industrial, é feito sob pressão de novecentos a mil quilopascais (nove a dez atmosferas ou bars), o que explica o termo expresso que aqui tem o sentido de exprimir ou espremer, ao contrário do que muitos pensam não tem originalmente o significado de rápido (este é apenas uma coincidência da automatização), portanto em uma tradução mais contextual o seu nome poderia ser café espremido e por isto muitos preferem manter o original em Italiano usando o termo espresso ou café espresso.</p>",
-              image: "http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Espresso_01.jpg/300px-Espresso_01.jpg"
             },
             // Café mais caro do mundo
             "((.*)?(melhor|mais caro|caro|melhores cafés)(.*)?)": {
