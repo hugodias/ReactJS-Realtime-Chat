@@ -100,7 +100,7 @@ var ChatApp = React.createClass({
             users: [],
             messages: [],
             text: '',
-            maxMessages: 2,
+            maxMessages: 3,
             robotPicture: '/img/robot.jpg',
             robotName: 'Mocha',
             picture: '/img/user.png'

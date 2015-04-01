@@ -19,13 +19,13 @@ module.exports = {
   answers: function () {
     return {
             // Qual a idade do robo
-            "idade|anos": {
+            "((.*)?(você|voce|sua)(.*)?(idade|anos)(.*)?": {
               response: "Tenho 946485 anos, voce?",
               image: "http://placehold.it/500x500"
             },
             // Qual o nome do robo
-            "((.*)seu(.*)nome)|((.*)(você|voce)(.*)chama)": {
-              response: "Meu nome é " + this.getRobotName() + ", e o seu?",
+            "((.*)seu(.*)nome)|((.*)(você|voce)(.*)chama)|(quem é você|e você|é você))": {
+              response: "Meu nome é " + this.getRobotName() + ",respondo perguntas sobre café, e o seu?",
               image: null
             },
             // Comprimentos
@@ -75,7 +75,7 @@ module.exports = {
               response: "<p>Se você estiver precisando de uma forcinha para finalizar um trabalho ou aguentar mais algumas horas acordado, a boa notícia é que a cafeína tem um efeito quase imediato no organismo. Segundo o American Academy of Sleep Medicine, a substância alcança seu pico no sangue entre 30 e 60 minutos após a ingestão. Existe ainda um estudo que aponta que o estado de alerta pode surgir em apenas 10 minutos.</p><p>Normalmente, o corpo leva de 3 a 5 horas para eliminar metade da substância e é preciso entre 8 e 14 horas para que o organismo esteja totalmente livre da cafeína. Especialistas em sono recomendam abster-se do café por, no mínimo, oito horas antes de dormir para evitar desconfortos durante o sono. Logicamente, os efeitos podem variar e costumam ser mais visíveis em pessoas que não ingerem cafeína regularmente.</p>",
               image: "http://ibxk.com.br/2013/8/materias/2158950942911653.jpg?w=1040"
             },
-            "((.*)?(quantidade|quanto|consumo|consumir)(.*)?(cafeina|cafeína)(.*)?)": {
+            "((.*)?(quantidade|quanto|consumo|consumir)(.*)?(cafeina|cafeína|café|cafe)(.*)?)": {
               response: "<p>Uma xícara de café tradicional apresenta entre 95 mg e 200 mg da substância.</p><p>Estudos revelam que os americanos têm um consumo moderado da bebida, que fica entre 200 mg e 300 mg do estimulante por dia. Passando desse limite, o consumo é considerado pesado (entre 500 mg e 600 mg) e pode trazer efeitos colaterais.</p>",
               image: "http://ibxk.com.br/2013/8/materias/2158950942911814.jpg?w=1040"
             },
@@ -89,10 +89,21 @@ module.exports = {
               response: "<p>As calorias do café são mínimas. Só para se ter ideia, uma xícara de café amargo contém em média 2 kcal. O problema para a dieta são os acompanhamentos do café. Ele se torna mais calórico quando acompanhado de leite, açúcar, creme, chantilly, chocolate, etc.</p>",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/200px-A_small_cup_of_coffee.JPG"
             },
-            "((.*)?(mocha|moca)(.*)?)": {
+            // O que é mocha
+            "((.*)?(o que|significa)(.*)?(mocha|moca)(.*)?)": {
               response: "<p>Moca (em árabe: المخا, pronunciado 'al-Mukhā'') é uma variedade nobre de café da espécie Coffea arabica, que provinha do porto de Moca, no Iêmen. Entre os séculos XV e XVII, Moca foi o mais importante mercado de café do mundo.",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mocha_Latte_Costa_Rica.JPG/1280px-Mocha_Latte_Costa_Rica.JPG"
             },
+            // Como fazer café
+            "((.*)?(como fazer|como faz|fazer)(.*)?(café|cafe)(.*)?)": {
+              response: "<p>O jeito que a vovó fazia café, o processo de “coar” envolve colocar o pó dentro de um coador de pano, ao mesmo tempo em que se passa água aquecida em uma panela ou chaleira por ele. O coador é disposto em cima de uma xícara ou bule enquanto a água passa pelo pó. Um dos meios de preparo é esquentar brevemente a água e misturar, a ela, o pó de café. Não deixe que a água levante fervura, o que torna o café mais amargo.</p><p>Você também pode usar filtros de papel para a coagem, nesse caso será preciso um pequeno porta-filtro de tamanho compatível com o tamanho de filtro a ser utilizado. Depois de usado, descarte o filtro no lixo. Como fazer? Use uma colher de sopa para medir o tanto de café que você deseja. Para um litro de água, utilize entre 5 e 6 colheres de sopa cheia.</p>",
+              image: "http://eglu.pontofrio.com.br/wp-content/uploads/2013/05/guia-do-solteiro-cafe.jpg"
+            },
+            "((.*)?(o que|significa|o quê|é|significado|defina|definição)(.*)?(café expresso|expresso)(.*)?)": {
+              response: "<p>Um café expresso (do italiano caffè espresso), frequentemente referido simplesmente como expresso (ou ainda internacionalmente espresso), é um método de preparar café através da passagem de água quente (não fervente) sob alta pressão pelo café moído. O café expresso tradicional, em máquina industrial, é feito sob pressão de novecentos a mil quilopascais (nove a dez atmosferas ou bars), o que explica o termo expresso que aqui tem o sentido de exprimir ou espremer, ao contrário do que muitos pensam não tem originalmente o significado de rápido (este é apenas uma coincidência da automatização), portanto em uma tradução mais contextual o seu nome poderia ser café espremido e por isto muitos preferem manter o original em Italiano usando o termo espresso ou café espresso.</p>",
+              image: "http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Espresso_01.jpg/300px-Espresso_01.jpg"
+            },
+            // Café mais caro do mundo
             "((.*)?(melhor|mais caro|caro|melhores cafés)(.*)?)": {
               response: "<p>Com o nome de Kopi Luwak, os grãos passam por um processo muito especial de preparação, que fornece aroma e sabor únicos à bebida: antes de serem torrados, eles são ingeridos e — pasmem — processados pelo estômago e intestino de pequenos mamíferos conhecidos como civetas.</p><p>Em outras palavras, estamos tentando dizer isso mesmo que você entendeu. Os grãos usados para preparar o café mais caro do mundo são, necessariamente, expelidos nas fezes da cevita antes de irem para as prateleiras. Produzido nas ilhas de Sumatra, Bali e Java, o quilo do Kopi Luwak custa, em média, US$ 500 (R$ 1.000), na Indonésia. No Brasil, é possível degustar uma xícara pequena da bebida por cerca de R$ 20. Mas, é claro, o produto está disponível apenas em cafeterias gourmets.</p>",
               image: "http://ibxk.com.br/2012/8/materias/6713677710191336.jpg?w=1040"
