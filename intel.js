@@ -33,6 +33,7 @@ module.exports = {
               response: "Oi " + this.getUsername() + " tudo bem?",
               image: null
             },
+            // Conceito de cafe expresso
             "((.*)?(o que|significa|o quê|é|significado|defina|definição|fazer)(.*)?(café expresso|expresso)(.*)?)": {
               response: "<p>Um café expresso (do italiano caffè espresso), frequentemente referido simplesmente como expresso (ou ainda internacionalmente espresso), é um método de preparar café através da passagem de água quente (não fervente) sob alta pressão pelo café moído. O café expresso tradicional, em máquina industrial, é feito sob pressão de novecentos a mil quilopascais (nove a dez atmosferas ou bars), o que explica o termo expresso que aqui tem o sentido de exprimir ou espremer, ao contrário do que muitos pensam não tem originalmente o significado de rápido (este é apenas uma coincidência da automatização), portanto em uma tradução mais contextual o seu nome poderia ser café espremido e por isto muitos preferem manter o original em Italiano usando o termo espresso ou café espresso.</p>",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Espresso_01.jpg/300px-Espresso_01.jpg"
@@ -42,15 +43,22 @@ module.exports = {
               response: "<p>O café é uma bebida produzida a partir dos grãos torrados do fruto do cafeeiro. É servido tradicionalmente quente, mas também pode ser consumido gelado. O café é um estimulante, por possuir cafeína — geralmente 80 a 140 mg para cada 207 ml dependendo do método de preparação</p><p>Em alguns períodos da década de 1980, o café era a segunda mercadoria mais negociada no mundo por valor monetário, atrás apenas do petróleo.2 Este dado estatístico ainda é amplamente citado, mas tem sido impreciso por cerca de duas décadas, devido à queda do preço do café durante a crise do produto na década de 1990, reduzindo o valor total de suas exportações. Em 2003, o café foi o sétimo produto agrícola de exportação mais importante em termos de valor, atrás de culturas como trigo, milho e soja.</p>",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/200px-Roasted_coffee_beans.jpg"
             },
+            // Quanto custa cafe
+            "((.*)?(quanto custa|custa|valor)(.*)?(café|cafe)(.*)?)": {
+              response: "<p>Para ninguém tomar um susto na hora da conta, pesquisamos o preço do expresso em dez cafeterias. O resultado é surpreendente: a versão mais cara, do Octavio Café , custa R$ 6,92, quase o dobro do cafezinho no Café Raiz , vendido por R$ 3,50, mesmo preço do Café Martinelli Midi.</p>",
+              image: "http://vejasp.abril.com.br/blogs/delicia-de-conta/files/2014/06/caferaiz.jpeg"
+            },            
             // Tipos / espécies de café
             "((.*)?(tipos|espécies|especies|especie|espécie|planta|arábica|arabica|robusta|conilon)(.*)?(café|cafe)(.*)?)": {
               response: "<p>Existem dois tipos de planta de café: Arábica e Robusta (Conilon). Os 'melhores' cafés são do tipo Arábica, possuem aroma e doçura intensos com muitas variações de acidez, corpo e sabor. Os cafés especiais e gourmet são 100% Arábica. O Arábica tem 50% menos cafeína que o Robusta.</p><p>Existem muitas variedades da planta de café Arábica. As mais comuns nas melhores regiões produtoras brasileiras são: Bourbon, Catuaí, Acaiá e Mundo Novo. E, dentre essas variedades, existem também várias subvariedades: Bourbon Amarelo e Vermelho, Catuaí Amarelo e Vermelho, variedades de Mundo Novo, etc. Abaixo as características de algumas das principais variedades.</p>",
               image: "http://www.clubecafe.net.br/media/wysiwyg/tipos_de_caf_.png"
             },
+            // Blends
             "((.*)?(blend|blends)(.*)?)": {
               response: "<p>Blends de Café Gourmet. Cada variedade da planta do café arábica possui atributos específicos de aroma, corpo, acidez e doçura. As combinações, ou Blends, são desenvolvidas para balancear ou acentuar as melhores qualidades de cada variedade de café arábica.</p>",
               image: "http://www.clubecafe.net.br/media/wysiwyg/tipos_de_caf_.png"
             },
+            // Sobre cafe torrado
             "((.*)?(café|cafe)(.*)?(torrado|triagem|calibragem|torra)(.*)?)": {
               response: "<p>O café, para seu consumo, necessita obrigatoriamente ser torrado. Antes de torrados, os grãos são selecionados, passam por triagem e calibragem. O processo de torra consiste em submeter o grão à elevação progressiva e rápida da temperatura, fazendo com que sua umidade interna chegue a 3%. Durante o processo, os grãos são mexidos continuamente para que a torra seja uniforme. Esta fase é determinante na característica final da bebida, pois o grau de torra evidencia e/ou esconde muitas propriedades do grão.</p><p>Para cada cliente ou mercado consumidor, para cada tipo de café (variedade e preparo) há um grau de torra diferente. Esta é a marca registrada de cada empresa e seus diferentes produtos. Depois de torrado o café precisa passar por um processo de desgaseificação e, depois deste descanso, ele será moído ou apenas embalado (café em grãos) dependendo do tipo de utilização a que se destina.</p>",
               image: "http://www.abic.com.br/publique/cgi/cgilua.exe/plugins/system/br.com.fabricadigital.publique.arearestrita/media.lua?f=CONS_curiosidades_cafetorrado.jpg"
@@ -75,10 +83,12 @@ module.exports = {
               response: "<p>O café descafeinado tem cafeína sim, porém bem pouca. Para ser considerado descafeinado, o café precisa ter no máximo  0,1 g/100g de cafeína. Cumpre ressaltar que a quantidade de cafeína no produto varia de acordo com a marca, com o tipo e com o lote do café.</p>",
               image: "http://www.life-studio.es/wp-content/uploads/2013/07/TLMD_09.05.12_cafeina.jpg"
             },
+            // Efeitos da cafeina
             "((.*)?(efeito|efeitos)(.*)?(cafeina|cafeína)(.*)?)": {
               response: "<p>Se você estiver precisando de uma forcinha para finalizar um trabalho ou aguentar mais algumas horas acordado, a boa notícia é que a cafeína tem um efeito quase imediato no organismo. Segundo o American Academy of Sleep Medicine, a substância alcança seu pico no sangue entre 30 e 60 minutos após a ingestão. Existe ainda um estudo que aponta que o estado de alerta pode surgir em apenas 10 minutos.</p><p>Normalmente, o corpo leva de 3 a 5 horas para eliminar metade da substância e é preciso entre 8 e 14 horas para que o organismo esteja totalmente livre da cafeína. Especialistas em sono recomendam abster-se do café por, no mínimo, oito horas antes de dormir para evitar desconfortos durante o sono. Logicamente, os efeitos podem variar e costumam ser mais visíveis em pessoas que não ingerem cafeína regularmente.</p>",
               image: "http://ibxk.com.br/2013/8/materias/2158950942911653.jpg?w=1040"
             },
+            // Quanto posso tomar de cafe/cafeina
             "((.*)?(quantidade|quanto|consumo|consumir)(.*)?(cafeina|cafeína|café|cafe)(.*)?)": {
               response: "<p>Uma xícara de café tradicional apresenta entre 95 mg e 200 mg da substância.</p><p>Estudos revelam que os americanos têm um consumo moderado da bebida, que fica entre 200 mg e 300 mg do estimulante por dia. Passando desse limite, o consumo é considerado pesado (entre 500 mg e 600 mg) e pode trazer efeitos colaterais.</p>",
               image: "http://ibxk.com.br/2013/8/materias/2158950942911814.jpg?w=1040"

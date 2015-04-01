@@ -1,6 +1,9 @@
 body {
-    margin: 0 auto;
-    font-family: 'Oswald', sans-serif;
+  margin: 0 auto;
+  font-family: 'Oswald', sans-serif;
+  background: url(https://download.unsplash.com/5/unsplash-bonus.jpg) top left #2D201B;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .users {
@@ -9,14 +12,14 @@ body {
 }
 
 .messages {
-    min-height: 500px;
-    background: #FFF;
-    color: RGB(97, 50, 0);
-    font-weight: bold;
-    margin: 1em;
-    font-size: 16px;
-    border: 1px dashed #EEE;
-    padding: 1em;
+  min-height: 600px;
+  background: rgba(0,0,0,0.6);
+  color: #FFF;
+  font-weight: lighter;
+  margin: 1em;
+  font-size: 17px;
+  line-height: 26px;
+  padding: 1em;
 }
 
 .message_form,
@@ -25,8 +28,8 @@ body {
 }
 
 form input {
-    border: 2px solid #E0E0E0;
-    background: #EEE;
+    border: 2px solid #3D3A35;
+    background: #F1EEE9;
     color: #333;
     padding: 10px;
     width: 100%;
@@ -37,9 +40,22 @@ form input:focus {
 }
 
 .navbar-fixed-bottom {
-
+  background: #F1EEE9;
 }
-
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #3D3A35;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #3D3A35;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #3D3A35;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #3D3A35;
+}
 .message {
     border-bottom: 1px dashed #EEE;
     padding: 20px 0;
