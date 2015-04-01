@@ -63,6 +63,10 @@ module.exports = {
               response: "<p>O café, para seu consumo, necessita obrigatoriamente ser torrado. Antes de torrados, os grãos são selecionados, passam por triagem e calibragem. O processo de torra consiste em submeter o grão à elevação progressiva e rápida da temperatura, fazendo com que sua umidade interna chegue a 3%. Durante o processo, os grãos são mexidos continuamente para que a torra seja uniforme. Esta fase é determinante na característica final da bebida, pois o grau de torra evidencia e/ou esconde muitas propriedades do grão.</p><p>Para cada cliente ou mercado consumidor, para cada tipo de café (variedade e preparo) há um grau de torra diferente. Esta é a marca registrada de cada empresa e seus diferentes produtos. Depois de torrado o café precisa passar por um processo de desgaseificação e, depois deste descanso, ele será moído ou apenas embalado (café em grãos) dependendo do tipo de utilização a que se destina.</p>",
               image: "http://www.abic.com.br/publique/cgi/cgilua.exe/plugins/system/br.com.fabricadigital.publique.arearestrita/media.lua?f=CONS_curiosidades_cafetorrado.jpg"
             },
+            "((.*)?(produtor|produção)(.*)?(café|cafe)(.*)?(mundo))": {
+              response: "O maior produtor mundial de café é o Brasil. Em 2004 o país foi resposável por 35% da produção mundial de café, correspondente a 2356 milhões de toneladas",
+              image: "http://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Carte_Coffea_robusta_arabic.svg/400px-Carte_Coffea_robusta_arabic.svg.png"
+            },
             // Onde tem cafe, local
             "((.*)(estado|cidade|local|onde tem|produção|produzido|fazenda|mineiro|minas gerais|brasil)(.*)(café|cafe)(.*))": {
               response: "<p>Minas Gerais é o estado com maior produção de café do Brasil (26,6 milhões de sacas),5 o que corresponde a mais de 50% da produção nacional do produto e 17% da produção mundial. Patrocínio é o maior produtor do país com mais de 10% da produção do Triângulo Mineiro.</p>",
@@ -84,7 +88,7 @@ module.exports = {
               image: "http://www.life-studio.es/wp-content/uploads/2013/07/TLMD_09.05.12_cafeina.jpg"
             },
             // Efeitos da cafeina
-            "((.*)?(efeito|efeitos)(.*)?(cafeina|cafeína)(.*)?)": {
+            "((.*)?(efeito|efeitos|problemas|problema)(.*)?(cafeina|cafeína)(.*)?)": {
               response: "<p>Se você estiver precisando de uma forcinha para finalizar um trabalho ou aguentar mais algumas horas acordado, a boa notícia é que a cafeína tem um efeito quase imediato no organismo. Segundo o American Academy of Sleep Medicine, a substância alcança seu pico no sangue entre 30 e 60 minutos após a ingestão. Existe ainda um estudo que aponta que o estado de alerta pode surgir em apenas 10 minutos.</p><p>Normalmente, o corpo leva de 3 a 5 horas para eliminar metade da substância e é preciso entre 8 e 14 horas para que o organismo esteja totalmente livre da cafeína. Especialistas em sono recomendam abster-se do café por, no mínimo, oito horas antes de dormir para evitar desconfortos durante o sono. Logicamente, os efeitos podem variar e costumam ser mais visíveis em pessoas que não ingerem cafeína regularmente.</p>",
               image: "http://ibxk.com.br/2013/8/materias/2158950942911653.jpg?w=1040"
             },
