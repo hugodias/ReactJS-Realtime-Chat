@@ -1,7 +1,7 @@
 body {
   margin: 0 auto;
   font-family: 'Oswald', sans-serif;
-  background: url(https://download.unsplash.com/5/unsplash-bonus.jpg) top left #2D201B;
+  background: url(/img/background-blur.jpg) top left #2D201B;
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -13,7 +13,7 @@ body {
 
 .messages {
   min-height: 600px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   color: #FFF;
   font-weight: lighter;
   margin: 1em;
@@ -39,6 +39,20 @@ form input:focus {
     outline: none;
 }
 
+.img-inside{
+  float: left;
+  margin: 0 20px 20px 0;
+  max-width: 350px;
+}
+.message {
+    border-bottom: 1px dashed #EEE;
+    padding: 20px 0;
+}
+
+.username{
+  font-size: 24px;
+}
+
 .navbar-fixed-bottom {
   background: #F1EEE9;
 }
@@ -55,8 +69,4 @@ form input:focus {
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
    color:    #3D3A35;
-}
-.message {
-    border-bottom: 1px dashed #EEE;
-    padding: 20px 0;
 }

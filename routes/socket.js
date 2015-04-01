@@ -2,14 +2,19 @@ var Chance = require('chance');
 var chance = new Chance();
 var r = require('../robot.js');
 
+
+var users = [];
+
 // export function for listening to the socket
 module.exports = function (socket) {
   var name = chance.name();
 
+  users.push(name);
+
   // send the new user their name and a list of users
   socket.emit('init', {
     name: name,
-    users: []
+    users: users
   });
 
   // notify other clients that a new user has joined
@@ -36,7 +41,7 @@ module.exports = function (socket) {
       if(serverAnswer = Robot.ask() ){
         socket.emit('server:answer', serverAnswer);
 
-        socket.broadcast.emit('server:answer', serverAnswer);        
+        socket.broadcast.emit('server:answer', serverAnswer);
       }
 
     }, 2000);
@@ -49,7 +54,7 @@ module.exports = function (socket) {
       userNames.free(oldName);
 
       name = data.name;
-      
+
       socket.broadcast.emit('change:name', {
         oldName: oldName,
         newName: name

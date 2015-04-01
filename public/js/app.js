@@ -8,7 +8,7 @@ var Messages = [];
 var MessagePicture = React.createClass({
   render: function() {
     return (
-      <img src={this.props.picture} class="img-responsive"/>
+      <img src={this.props.picture} class="img-responsive img-inside"/>
     )
   }
 });
@@ -22,13 +22,11 @@ var Message = React.createClass({
                     <div class="col-xs-1">
                         <img src={this.props.picture} class="img-responsive"/>
                     </div>
-                    <div class="col-xs-9">
-                        <strong>{this.props.user}</strong>
+                    <div class="col-xs-11">
+                        {this.props.messageImage ? <MessagePicture picture={this.props.messageImage}/> : null}
+                        <strong class="username">{this.props.user}</strong>
                         :
                         <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>
-                    </div>
-                    <div class="col-xs-2">
-                      {this.props.messageImage ? <MessagePicture picture={this.props.messageImage}/> : null}
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -100,7 +98,7 @@ var ChatApp = React.createClass({
             users: [],
             messages: [],
             text: '',
-            maxMessages: 3,
+            maxMessages: 2,
             robotPicture: '/img/robot.jpg',
             robotName: 'Mocha',
             picture: '/img/user.png'
@@ -108,6 +106,11 @@ var ChatApp = React.createClass({
     },
 
     initialize: function (data) {
+        this.appendMessage(
+          this.state.robotName,
+          'Olá ' + data.name + ', digite sua dúvida no campo abaixo!',
+          this.state.robotPicture);
+
         this.setState({users: data.users, user: data.name});
     },
 

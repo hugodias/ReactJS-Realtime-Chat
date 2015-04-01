@@ -34,10 +34,10 @@ module.exports = {
               image: null
             },
             // Conceito de cafe expresso
-            "((.*)?(o que|significa|o quê|o que|é|significado|defina|definição|fazer)(.*)?(café expresso|expresso)(.*)?)": {
+            "((.*)?(o que|significa|o quê|o que|é|significado|defina|definição|fazer)(.*)?(café expresso|expresso|espresso)(.*)?)": {
               response: "<p>Um café expresso (do italiano caffè espresso), frequentemente referido simplesmente como expresso (ou ainda internacionalmente espresso), é um método de preparar café através da passagem de água quente (não fervente) sob alta pressão pelo café moído. O café expresso tradicional, em máquina industrial, é feito sob pressão de novecentos a mil quilopascais (nove a dez atmosferas ou bars), o que explica o termo expresso que aqui tem o sentido de exprimir ou espremer, ao contrário do que muitos pensam não tem originalmente o significado de rápido (este é apenas uma coincidência da automatização), portanto em uma tradução mais contextual o seu nome poderia ser café espremido e por isto muitos preferem manter o original em Italiano usando o termo espresso ou café espresso.</p>",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Espresso_01.jpg/300px-Espresso_01.jpg"
-            },            
+            },
             // Conceito
             "((.*)(o que é|oq é|o que|o quê|significa|o que|significado)(.*)(café|cafe)(.*))": {
               response: "<p>O café é uma bebida produzida a partir dos grãos torrados do fruto do cafeeiro. É servido tradicionalmente quente, mas também pode ser consumido gelado. O café é um estimulante, por possuir cafeína — geralmente 80 a 140 mg para cada 207 ml dependendo do método de preparação</p><p>Em alguns períodos da década de 1980, o café era a segunda mercadoria mais negociada no mundo por valor monetário, atrás apenas do petróleo.2 Este dado estatístico ainda é amplamente citado, mas tem sido impreciso por cerca de duas décadas, devido à queda do preço do café durante a crise do produto na década de 1990, reduzindo o valor total de suas exportações. Em 2003, o café foi o sétimo produto agrícola de exportação mais importante em termos de valor, atrás de culturas como trigo, milho e soja.</p>",
@@ -47,7 +47,7 @@ module.exports = {
             "((.*)?(quanto custa|custa|valor)(.*)?(café|cafe)(.*)?)": {
               response: "<p>Para ninguém tomar um susto na hora da conta, pesquisamos o preço do expresso em dez cafeterias. O resultado é surpreendente: a versão mais cara, do Octavio Café , custa R$ 6,92, quase o dobro do cafezinho no Café Raiz , vendido por R$ 3,50, mesmo preço do Café Martinelli Midi.</p>",
               image: "http://vejasp.abril.com.br/blogs/delicia-de-conta/files/2014/06/caferaiz.jpeg"
-            },            
+            },
             // Tipos / espécies de café
             "((.*)?(tipos|espécies|especies|especie|espécie|planta|arábica|arabica|robusta|conilon)(.*)?(café|cafe)(.*)?)": {
               response: "<p>Existem dois tipos de planta de café: Arábica e Robusta (Conilon). Os 'melhores' cafés são do tipo Arábica, possuem aroma e doçura intensos com muitas variações de acidez, corpo e sabor. Os cafés especiais e gourmet são 100% Arábica. O Arábica tem 50% menos cafeína que o Robusta.</p><p>Existem muitas variedades da planta de café Arábica. As mais comuns nas melhores regiões produtoras brasileiras são: Bourbon, Catuaí, Acaiá e Mundo Novo. E, dentre essas variedades, existem também várias subvariedades: Bourbon Amarelo e Vermelho, Catuaí Amarelo e Vermelho, variedades de Mundo Novo, etc. Abaixo as características de algumas das principais variedades.</p>",
@@ -105,10 +105,10 @@ module.exports = {
             // O café é muito calórico?
             "(((café|cafe)(.*)?(calórico|calorico|calorias|engorda|emagrece|emagrecer|peso|gordo|gordura|gorda|caloria|engordar))|((.*)?(calórico|calorico|calorias|emagrece|peso|engorda|gordo|gordura|gorda|caloria|engordar)(.*)?(café|cafe))(.*)?)": {
               response: "<p>As calorias do café são mínimas. Só para se ter ideia, uma xícara de café amargo contém em média 2 kcal. O problema para a dieta são os acompanhamentos do café. Ele se torna mais calórico quando acompanhado de leite, açúcar, creme, chantilly, chocolate, etc.</p>",
-              image: "http://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/200px-A_small_cup_of_coffee.JPG"
+              image: "http://www.vanillamap.com/wp-content/uploads/2014/11/Coffee-and-Breakfast.png"
             },
             // O que é mocha
-            "((.*)?(o que|significa)(.*)?(mocha|moca)(.*)?)": {
+            "((.*)?(o que|significa|café|cafe)(.*)?(mocha|moca)(.*)?)": {
               response: "<p>Moca (em árabe: المخا, pronunciado 'al-Mukhā'') é uma variedade nobre de café da espécie Coffea arabica, que provinha do porto de Moca, no Iêmen. Entre os séculos XV e XVII, Moca foi o mais importante mercado de café do mundo.",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mocha_Latte_Costa_Rica.JPG/1280px-Mocha_Latte_Costa_Rica.JPG"
             },
@@ -131,6 +131,11 @@ module.exports = {
             "((.*)?(cultivo|cultivar)(.*)?(café|cafe)(.*)?)": {
               response: "As plantas de café são cultivadas a partir das sementes, em sementeiras, até que tenham duas folhas verdadeiras. As mudas são sombreadas para evitar perda excessiva de água. Após 3 meses, são movidas para viveiros, onde crescem até 20-40 cm de altura antes de serem transplantadas para o campo no início da estação chuvosa.",
               image: "http://paraquat.com/sites/default/files/5.2.15%20img%204.png"
+            },
+            // Onde comprar café
+            "((.*)?(onde|lugar)(.*)?(comprar|compro)(.*)?(café|cafe)(.*)?)": {
+              response: "É possivel comprar café em quase todo supermercado ou padaria no Brasil. Nos tempos atuais é existe a possibilidade de adquirir cafés através da internet, você nem precisa sair de casa!",
+              image: "http://www.guarulhosweb.com.br/fotos/-----2011/02-21/cafe.jpg"
             }
           }
         }
