@@ -63,12 +63,12 @@ module.exports = {
               response: "<p>O café, para seu consumo, necessita obrigatoriamente ser torrado. Antes de torrados, os grãos são selecionados, passam por triagem e calibragem. O processo de torra consiste em submeter o grão à elevação progressiva e rápida da temperatura, fazendo com que sua umidade interna chegue a 3%. Durante o processo, os grãos são mexidos continuamente para que a torra seja uniforme. Esta fase é determinante na característica final da bebida, pois o grau de torra evidencia e/ou esconde muitas propriedades do grão.</p><p>Para cada cliente ou mercado consumidor, para cada tipo de café (variedade e preparo) há um grau de torra diferente. Esta é a marca registrada de cada empresa e seus diferentes produtos. Depois de torrado o café precisa passar por um processo de desgaseificação e, depois deste descanso, ele será moído ou apenas embalado (café em grãos) dependendo do tipo de utilização a que se destina.</p>",
               image: "http://www.abic.com.br/publique/cgi/cgilua.exe/plugins/system/br.com.fabricadigital.publique.arearestrita/media.lua?f=CONS_curiosidades_cafetorrado.jpg"
             },
-            "((.*)?(produtor|produção)(.*)?(café|cafe)(.*)?(mundo))": {
+            "((.*)?(país|pais|quem)(.*)?(produz|produtor|produção)(.*)?(café|cafe)(.*)?(mundo)?)": {
               response: "O maior produtor mundial de café é o Brasil. Em 2004 o país foi resposável por 35% da produção mundial de café, correspondente a 2356 milhões de toneladas",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Carte_Coffea_robusta_arabic.svg/400px-Carte_Coffea_robusta_arabic.svg.png"
             },
             // Onde tem cafe, local
-            "((.*)(estado|cidade|local|onde tem|produção|produzido|fazenda|mineiro|minas gerais|brasil)(.*)(café|cafe)(.*))": {
+            "((.*)(estado|cidade|local|onde tem|produtor|produzido|fazenda|mineiro|minas gerais|brasil)(.*)(café|cafe)(.*))": {
               response: "<p>Minas Gerais é o estado com maior produção de café do Brasil (26,6 milhões de sacas),5 o que corresponde a mais de 50% da produção nacional do produto e 17% da produção mundial. Patrocínio é o maior produtor do país com mais de 10% da produção do Triângulo Mineiro.</p>",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Coffee_Plantation.jpg/400px-Coffee_Plantation.jpg"
             },
@@ -121,6 +121,16 @@ module.exports = {
             "((.*)?(melhor|mais caro|caro|melhores cafés)(.*)?)": {
               response: "<p>Com o nome de Kopi Luwak, os grãos passam por um processo muito especial de preparação, que fornece aroma e sabor únicos à bebida: antes de serem torrados, eles são ingeridos e — pasmem — processados pelo estômago e intestino de pequenos mamíferos conhecidos como civetas.</p><p>Em outras palavras, estamos tentando dizer isso mesmo que você entendeu. Os grãos usados para preparar o café mais caro do mundo são, necessariamente, expelidos nas fezes da cevita antes de irem para as prateleiras. Produzido nas ilhas de Sumatra, Bali e Java, o quilo do Kopi Luwak custa, em média, US$ 500 (R$ 1.000), na Indonésia. No Brasil, é possível degustar uma xícara pequena da bebida por cerca de R$ 20. Mas, é claro, o produto está disponível apenas em cafeterias gourmets.</p>",
               image: "http://ibxk.com.br/2012/8/materias/6713677710191336.jpg?w=1040"
+            },
+            // qual o processo de beneficiamento do café?
+            "((.*)?(processo|produção|producao|beneficiamento|produzir|colher|colheita)(.*)?(café|cafe)(.*)?)": {
+              response: "<p>Veja o processo de produção do café: </p> <div class='row'><div class='col-md-6'><p><strong> Etapas Pré-colheita</strong><br/><img src='http://sistemasdeproducao.cnptia.embrapa.br/FontesHTML/Cafe/CafeOrganico_2ed/imagens/fluxograma01.gif' class='img-responsive'></p></div><div class='col-md-6'><p><strong> Etapas Pós-colheita</strong><br/><img src='http://sistemasdeproducao.cnptia.embrapa.br/FontesHTML/Cafe/CafeOrganico_2ed/imagens/fluxograma02.gif' class='img-responsive'></p></div>",
+              image: null
+            },
+            // quais as técnicas de cultivo do café?
+            "((.*)?(cultivo|cultivar)(.*)?(café|cafe)(.*)?)": {
+              response: "As plantas de café são cultivadas a partir das sementes, em sementeiras, até que tenham duas folhas verdadeiras. As mudas são sombreadas para evitar perda excessiva de água. Após 3 meses, são movidas para viveiros, onde crescem até 20-40 cm de altura antes de serem transplantadas para o campo no início da estação chuvosa.",
+              image: "http://paraquat.com/sites/default/files/5.2.15%20img%204.png"
             }
           }
         }
