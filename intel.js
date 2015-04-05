@@ -82,6 +82,15 @@ module.exports = {
               response: "<p>Ao colocar açúcar junto com a água para preparar o cafezinho de cada dia, você acaba alterando o ponto da ebulição, a textura da bebida e o sabor do café. Ele pode virar um verdadeiro xarope. Se você não quer que isso aconteça, adoce o café depois de pronto ou aprenda a apreciar a bebida pura.</p>",
               image: "http://www.dicasdemulher.com.br/wp-content/uploads/2014/01/dieta-sem-acucar.jpg"
             },
+            // Como adoçar cafe
+            "(((.*)?(adoçar|adoçado)(.*)?(café|cafe)(.*)?)|((.*)?(café|cafe)(.*)?(doce|docinho|adoçado)))": {
+              response: "<p>No Brasil, a maneira mais tradicional de se adoçar o café é com a utilização de açúcar refinado. Esse tipo de adoçamento faz parte da cultura dos brasileiros, visto que nosso país é o maior produtor mundial de cana e também de açúcar. Mas esse ingrediente não é uma boa opção para o café, porque muda bastante o sabor da bebida e deve, por isso, ser usado com moderação.</p><p> Veja todas as outras maneiras de adoçar seu cafezinho: Açúcar mascavo; Melado de cana; Açúcar demerara; Mel; Açúcar orgânico; Açúcar de beterraba; Adoçantes",
+              image: "http://www.goldadocantes.com.br/blog/wp-content/uploads/2014/09/7-formas-alternativas-de-ado%C3%A7ar-seu-cafezinho-686x350.png"
+            },
+            "((.*)?(xicara|xícara)(.*)?(café|cafe)(.*)?)": {
+              response: "<p>Não é uma regra, mas é comum e recomendado degustar o café usando a <strong>xícara de café.</strong>. Esta xícara tem aproximadamente 50ml e pode ser adquirida em qualquer supermercado ou lojas de decoração.</p>",
+              image: "http://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/200px-A_small_cup_of_coffee.JPG"
+            },
             // O Café descafeinado não tem cafeína mesmo?
             "((.*)?(café|cafe)(.*)?(descafeinado)(.*)?(cafeina|cafeína)(.*)?)": {
               response: "<p>O café descafeinado tem cafeína sim, porém bem pouca. Para ser considerado descafeinado, o café precisa ter no máximo  0,1 g/100g de cafeína. Cumpre ressaltar que a quantidade de cafeína no produto varia de acordo com a marca, com o tipo e com o lote do café.</p>",
@@ -97,8 +106,13 @@ module.exports = {
               response: "<p>Uma xícara de café tradicional apresenta entre 95 mg e 200 mg da substância.</p><p>Estudos revelam que os americanos têm um consumo moderado da bebida, que fica entre 200 mg e 300 mg do estimulante por dia. Passando desse limite, o consumo é considerado pesado (entre 500 mg e 600 mg) e pode trazer efeitos colaterais.</p>",
               image: "http://ibxk.com.br/2013/8/materias/2158950942911814.jpg?w=1040"
             },
+            // Cafe faz bem
+            "((.*)?(café|cafe)(.*)?(faz bem)(.*)?)": {
+              response: "<p>Estudos comprovam que o consumo moderado de café (de três a quatro xícaras por dia) exerce efeito de prevenção de problemas tão diversos como o mal de Parkinson, a depressão, o diabetes , os cálculos biliares e o câncer de cólon. Além disso melhora a atenção e, consequentemente, o desempenho escolar e a produtividade no trabalho, ou seja, o café faz bem sim! (Moderadamente)</p>",
+              image: "http://jornaltribunadonorte.net/wp-content/uploads/2014/01/woman-with-coffee-1.jpg"
+            },
             // Café faz mal à saúde?
-            "((.*)?(café|cafe)(.*)?(mal|faz mal|saúde|bem|faz bem|prejudica|saudável|saudavel|saude|problemas|problema)(.*)?)": {
+            "((.*)?(café|cafe)(.*)?(mal|faz mal|saúde|bem|faz bem|prejudica|prejudicial|saudável|saudavel|saude|problemas|problema)(.*)?)": {
               response: "<p>O café só faz mal quando consumido em altas doses diárias. Quando tomado com equilíbrio, o café é uma boa fonte de energia, mantém o estado de alerta do corpo, além de conter lipídios, sais minerais, vitaminas e antioxidantes essenciais para a saúde.</p>",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/200px-A_small_cup_of_coffee.JPG"
             },
@@ -107,6 +121,7 @@ module.exports = {
               response: "<p>As calorias do café são mínimas. Só para se ter ideia, uma xícara de café amargo contém em média 2 kcal. O problema para a dieta são os acompanhamentos do café. Ele se torna mais calórico quando acompanhado de leite, açúcar, creme, chantilly, chocolate, etc.</p>",
               image: "http://www.vanillamap.com/wp-content/uploads/2014/11/Coffee-and-Breakfast.png"
             },
+            // Tabela nutricional do cafe
             "((.*)?(valor nutricional|tabela nutricional|nutricional)(.*)(café|cafe)(.*)?)": {
               response: "<p><strong>Valor nutricional por cada 100g</strong>kJ	2<br/>Carboidratos	0<br/>Gordura	0,02 g<br/>Gordura saturada	0,02 g<br/>Gordura trans	0 g<br/>Gordura monoinsaturada	0,015 g<br/>Gordura polinsaturada	0,001 g<br/>Água	99,39 g<br/>Proteínas	0,12 g<br/>Cafeína	40 mg<br/>Vitamina A	0 ug<br/>Betacaroteno	0 ug<br/>Vitamina B1	0,014 mg<br/>Vitamina B2	0,076 mg<br/>Vitamina B3	0,191 mg<br/>Vitamina B5	0,254 mg<br/>Vitamina B6	0,001 mg<br/>Vitamina E	0,01 mg<br/>Vitamina K	0,0001 mg<br/>Cálcio	2 mg<br/>Ferro	0,01 mg<br/>Magnésio	3 mg<br/>Manganésio	0,023 mg<br/>Fósforo	3 mg<br/>Potássio	49 mg<br/>Sódio	2 mg<br/>Zinco	0,02 mg<br/></p>",
               image: null
