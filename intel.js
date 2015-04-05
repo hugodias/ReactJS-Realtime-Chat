@@ -38,6 +38,11 @@ module.exports = {
               response: "<p>Um café expresso (do italiano caffè espresso), frequentemente referido simplesmente como expresso (ou ainda internacionalmente espresso), é um método de preparar café através da passagem de água quente (não fervente) sob alta pressão pelo café moído. O café expresso tradicional, em máquina industrial, é feito sob pressão de novecentos a mil quilopascais (nove a dez atmosferas ou bars), o que explica o termo expresso que aqui tem o sentido de exprimir ou espremer, ao contrário do que muitos pensam não tem originalmente o significado de rápido (este é apenas uma coincidência da automatização), portanto em uma tradução mais contextual o seu nome poderia ser café espremido e por isto muitos preferem manter o original em Italiano usando o termo espresso ou café espresso.</p>",
               image: "http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Espresso_01.jpg/300px-Espresso_01.jpg"
             },
+            // Sobre cafe torrado
+            "((.*)?(café|cafe)(.*)?(torrado|triagem|calibragem|torra)(.*)?)": {
+              response: "<p>O café, para seu consumo, necessita obrigatoriamente ser torrado. Antes de torrados, os grãos são selecionados, passam por triagem e calibragem. O processo de torra consiste em submeter o grão à elevação progressiva e rápida da temperatura, fazendo com que sua umidade interna chegue a 3%. Durante o processo, os grãos são mexidos continuamente para que a torra seja uniforme. Esta fase é determinante na característica final da bebida, pois o grau de torra evidencia e/ou esconde muitas propriedades do grão.</p><p>Para cada cliente ou mercado consumidor, para cada tipo de café (variedade e preparo) há um grau de torra diferente. Esta é a marca registrada de cada empresa e seus diferentes produtos. Depois de torrado o café precisa passar por um processo de desgaseificação e, depois deste descanso, ele será moído ou apenas embalado (café em grãos) dependendo do tipo de utilização a que se destina.</p>",
+              image: "http://www.abic.com.br/publique/cgi/cgilua.exe/plugins/system/br.com.fabricadigital.publique.arearestrita/media.lua?f=CONS_curiosidades_cafetorrado.jpg"
+            },
             // Conceito
             "((.*)(o que é|oq é|o que|o quê|significa|o que|significado)(.*)(café|cafe)(.*))": {
               response: "<p>O café é uma bebida produzida a partir dos grãos torrados do fruto do cafeeiro. É servido tradicionalmente quente, mas também pode ser consumido gelado. O café é um estimulante, por possuir cafeína — geralmente 80 a 140 mg para cada 207 ml dependendo do método de preparação</p><p>Em alguns períodos da década de 1980, o café era a segunda mercadoria mais negociada no mundo por valor monetário, atrás apenas do petróleo.2 Este dado estatístico ainda é amplamente citado, mas tem sido impreciso por cerca de duas décadas, devido à queda do preço do café durante a crise do produto na década de 1990, reduzindo o valor total de suas exportações. Em 2003, o café foi o sétimo produto agrícola de exportação mais importante em termos de valor, atrás de culturas como trigo, milho e soja.</p>",
@@ -57,11 +62,6 @@ module.exports = {
             "((.*)?(blend|blends)(.*)?)": {
               response: "<p>Blends de Café Gourmet. Cada variedade da planta do café arábica possui atributos específicos de aroma, corpo, acidez e doçura. As combinações, ou Blends, são desenvolvidas para balancear ou acentuar as melhores qualidades de cada variedade de café arábica.</p>",
               image: "http://www.clubecafe.net.br/media/wysiwyg/tipos_de_caf_.png"
-            },
-            // Sobre cafe torrado
-            "((.*)?(café|cafe)(.*)?(torrado|triagem|calibragem|torra)(.*)?)": {
-              response: "<p>O café, para seu consumo, necessita obrigatoriamente ser torrado. Antes de torrados, os grãos são selecionados, passam por triagem e calibragem. O processo de torra consiste em submeter o grão à elevação progressiva e rápida da temperatura, fazendo com que sua umidade interna chegue a 3%. Durante o processo, os grãos são mexidos continuamente para que a torra seja uniforme. Esta fase é determinante na característica final da bebida, pois o grau de torra evidencia e/ou esconde muitas propriedades do grão.</p><p>Para cada cliente ou mercado consumidor, para cada tipo de café (variedade e preparo) há um grau de torra diferente. Esta é a marca registrada de cada empresa e seus diferentes produtos. Depois de torrado o café precisa passar por um processo de desgaseificação e, depois deste descanso, ele será moído ou apenas embalado (café em grãos) dependendo do tipo de utilização a que se destina.</p>",
-              image: "http://www.abic.com.br/publique/cgi/cgilua.exe/plugins/system/br.com.fabricadigital.publique.arearestrita/media.lua?f=CONS_curiosidades_cafetorrado.jpg"
             },
             "((.*)?(país|pais|quem)(.*)?(produz|produtor|produção)(.*)?(café|cafe)(.*)?(mundo)?)": {
               response: "O maior produtor mundial de café é o Brasil. Em 2004 o país foi resposável por 35% da produção mundial de café, correspondente a 2356 milhões de toneladas",
@@ -107,6 +107,10 @@ module.exports = {
               response: "<p>As calorias do café são mínimas. Só para se ter ideia, uma xícara de café amargo contém em média 2 kcal. O problema para a dieta são os acompanhamentos do café. Ele se torna mais calórico quando acompanhado de leite, açúcar, creme, chantilly, chocolate, etc.</p>",
               image: "http://www.vanillamap.com/wp-content/uploads/2014/11/Coffee-and-Breakfast.png"
             },
+            "((.*)?(valor nutricional|tabela nutricional|nutricional)(.*)(café|cafe)(.*)?)": {
+              response: "<p><strong>Valor nutricional por cada 100g</strong>kJ	2<br/>Carboidratos	0<br/>Gordura	0,02 g<br/>Gordura saturada	0,02 g<br/>Gordura trans	0 g<br/>Gordura monoinsaturada	0,015 g<br/>Gordura polinsaturada	0,001 g<br/>Água	99,39 g<br/>Proteínas	0,12 g<br/>Cafeína	40 mg<br/>Vitamina A	0 ug<br/>Betacaroteno	0 ug<br/>Vitamina B1	0,014 mg<br/>Vitamina B2	0,076 mg<br/>Vitamina B3	0,191 mg<br/>Vitamina B5	0,254 mg<br/>Vitamina B6	0,001 mg<br/>Vitamina E	0,01 mg<br/>Vitamina K	0,0001 mg<br/>Cálcio	2 mg<br/>Ferro	0,01 mg<br/>Magnésio	3 mg<br/>Manganésio	0,023 mg<br/>Fósforo	3 mg<br/>Potássio	49 mg<br/>Sódio	2 mg<br/>Zinco	0,02 mg<br/></p>",
+              image: null
+            },
             // O que é mocha
             "((.*)?(o que|significa|café|cafe)(.*)?(mocha|moca)(.*)?)": {
               response: "<p>Moca (em árabe: المخا, pronunciado 'al-Mukhā'') é uma variedade nobre de café da espécie Coffea arabica, que provinha do porto de Moca, no Iêmen. Entre os séculos XV e XVII, Moca foi o mais importante mercado de café do mundo.",
@@ -134,8 +138,12 @@ module.exports = {
             },
             // Onde comprar café
             "((.*)?(onde|lugar)(.*)?(comprar|compro)(.*)?(café|cafe)(.*)?)": {
-              response: "É possivel comprar café em quase todo supermercado ou padaria no Brasil. Nos tempos atuais é existe a possibilidade de adquirir cafés através da internet, você nem precisa sair de casa!",
+              response: "É possivel comprar café em quase todo supermercado ou padaria no Brasil. Nos tempos atuais ainda existe a possibilidade de adquirir cafés através da internet, você nem precisa sair de casa!",
               image: "http://www.guarulhosweb.com.br/fotos/-----2011/02-21/cafe.jpg"
+            },
+            "((.*)?(materia|matéria)(prima)(.*)?(café|cafe)(.*)?)": {
+              response: "Café é a semente do cafeeiro. A semente é uma pequena esfera verde, que quando atinge o estado maduro para a colheita tem um vermelho intenso. Cada fruto costuma possuir duas pequenas sementes semi-esféricas com seus lados planos virados para si. O café é constituído majoritariamente de endosperma que contém altas quantidades da subtância cafeína ( 0.8 - 2.5% ), nomeada a partir da semente. A semente possuiu grande importância comercial, como é usada para produzir o café (bebida) e é um produto de exportação significativo para muitos países.",
+              image: "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coffee_Bean_Structure.svg/220px-Coffee_Bean_Structure.svg.png"
             }
           }
         }

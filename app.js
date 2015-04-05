@@ -8,10 +8,7 @@ var express = require('express'),
 
 var app = module.exports = express.createServer();
 
-// Hook Socket.io into Express
 var io = require('socket.io').listen(app);
-
-// Configuration
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -29,11 +26,8 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-// Socket.io Communication
-
+// Sockets
 io.sockets.on('connection', socket);
-
-// Start server
 
 app.listen((process.env.PORT || 5000), function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
