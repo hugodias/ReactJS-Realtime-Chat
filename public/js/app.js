@@ -13,7 +13,6 @@ var MessagePicture = React.createClass({
   }
 });
 
-
 var Message = React.createClass({
     render: function () {
         return (
@@ -34,7 +33,6 @@ var Message = React.createClass({
         )
     }
 });
-
 
 var MessageList = React.createClass({
     render: function () {
@@ -81,7 +79,6 @@ var MessageForm = React.createClass({
     }
 });
 
-
 var ChatApp = React.createClass({
 
     getInitialState: function () {
@@ -91,8 +88,6 @@ var ChatApp = React.createClass({
         socket.on('send:message', this.messageRecieve);
         socket.on('user:join', this.userJoined);
         socket.on('user:left', this.userLeft);
-        socket.on('change:name', this.userChangedName);
-
 
         return {
             users: [],
@@ -147,18 +142,6 @@ var ChatApp = React.createClass({
         this.setState();
     },
 
-    userChangedName: function (data) {
-        var oldName = data.oldName;
-        var newName = data.newName;
-        this.state.users.splice(this.state.users.indexOf(oldName), 1, newName);
-
-        var msg = 'Change Name : ' + oldName + ' ==> ' + newName;
-
-        this.appendMessage(this.state.robotName, msg, this.state.robotPicture);
-
-        this.setState();
-    },
-
     handleMessageSubmit: function (message) {
         this.appendMessage(message.user, message.text, message.picture);
 
@@ -166,7 +149,6 @@ var ChatApp = React.createClass({
 
         socket.emit('send:message', message);
     },
-
 
     removeOldMessages: function () {
         if (this.state.messages.length > this.state.maxMessages) {
