@@ -2,12 +2,12 @@ var Chance = require('chance');
 var chance = new Chance();
 var r = require('../robot.js');
 
-
 var users = [];
 
 module.exports = function (socket) {
   var name = chance.name();
 
+  // Adiciona o usuario na lista de usuarios logados
   users.push(name);
 
   socket.emit('init', {
@@ -41,24 +41,6 @@ module.exports = function (socket) {
       }
 
     }, 2000);
-  });
-
-  socket.on('change:name', function (data, fn) {
-    if (userNames.claim(data.name)) {
-      var oldName = name;
-      userNames.free(oldName);
-
-      name = data.name;
-
-      socket.broadcast.emit('change:name', {
-        oldName: oldName,
-        newName: name
-      });
-
-      fn(true);
-    } else {
-      fn(false);
-    }
   });
 
   socket.on('disconnect', function () {
