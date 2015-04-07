@@ -3,6 +3,7 @@ var AI = require('./intel.js');
 module.exports = function(question, username) {
 
   var robotName = 'Mocha';
+  var defaultAnswer = 'Não entendi sua pergunta. Pergunte-me algo sobre Café!';
 
   // Nome do robo
   AI.setRobotName(robotName);
@@ -28,6 +29,12 @@ module.exports = function(question, username) {
         }
       }
 
+      // Opcional => O robo pode ter uma resposta padrao caso nao encontre uma resposta
+      // para a pergunta
+      if(defaultAnswer) {
+        return defaultAnswer;  
+      }
+      
       return false;
     }
   };
