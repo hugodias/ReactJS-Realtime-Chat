@@ -34,6 +34,16 @@ var Message = React.createClass({
     }
 });
 
+var UsersOnline = React.createClass({
+  render: function() {
+    return (
+      <div class="online-users">
+        <strong>{this.props.count}</strong><br/> usuários ativos
+      </div>
+    )
+  }
+});
+
 var MessageList = React.createClass({
     render: function () {
         var renderMessage = function (message) {
@@ -172,18 +182,21 @@ var ChatApp = React.createClass({
 
     render: function () {
         return (
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <MessageList messages={this.state.messages} />
-                    </div>
-                </div>
-                <nav class="navbar navbar-default navbar-fixed-bottom">
-                    <div class="container">
-                        <MessageForm onMessageSubmit={this.handleMessageSubmit} user={this.state.user} picture={this.state.picture} />
-                    </div>
-                </nav>
+            <div class="main">
+              <UsersOnline count={this.state.users.length} />
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-12">
+                          <MessageList messages={this.state.messages} />
+                      </div>
+                  </div>
+                  <nav class="navbar navbar-default navbar-fixed-bottom">
+                      <div class="container">
+                          <MessageForm onMessageSubmit={this.handleMessageSubmit} user={this.state.user} picture={this.state.picture} />
+                      </div>
+                  </nav>
 
+              </div>
             </div>
         );
     }

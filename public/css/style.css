@@ -11,6 +11,21 @@ body {
     margin-right: 1.5em;
 }
 
+.online-users{
+  position: absolute;
+  background: #FFF;
+  right: 0;
+  top: 0;
+  padding: 20px 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #281710;
+}
+
+.online-users strong{
+  font-size: 20px;
+}
+
 .messages {
   min-height: 600px;
   background: rgba(0,0,0,0.7);
