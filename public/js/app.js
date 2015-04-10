@@ -142,8 +142,8 @@ var ChatApp = React.createClass({
     },
 
     userLeft: function (data) {
-        var index = this.state.users.indexOf(data.name);
-        this.state.users.splice(index, 1);
+        // Atualiza lista de usuarios
+        this.state.users = data.users;
 
         var msg = data.name + ' Saiu';
 

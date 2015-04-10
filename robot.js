@@ -1,8 +1,10 @@
 var S = require('string');
 var AI = require('./intel.js');
+
 module.exports = function(question, username) {
 
   var robotName = 'Mocha';
+
   var defaultAnswer = 'Não entendi sua pergunta. Pergunte-me algo sobre Café!';
 
   // Nome do robo
@@ -17,7 +19,7 @@ module.exports = function(question, username) {
 
       // Lista de teorias com perguntas e respostas
       var theories = AI.theories();
-      
+
       // Faz o loop em todas as perguntas
       for (var key in theories) {
 
@@ -25,7 +27,7 @@ module.exports = function(question, username) {
         var theory = new RegExp(key, "ig");
 
         // Retorna apenas se encontrada uma resposta para a pergunta
-        if(question.match(theory) != null) {
+        if(question.match(theory) !== null) {
           answer = theories[key];
         }
       }
@@ -34,8 +36,7 @@ module.exports = function(question, username) {
       if(!answer)
         answer = defaultAnswer;
 
-      // Callback
       callback(answer);
     }
   };
-}
+};
