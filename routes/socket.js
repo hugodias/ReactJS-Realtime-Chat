@@ -32,13 +32,11 @@ module.exports = function (socket) {
       // Inicializa o Robo com a pergunta do usuario
       var Robot = r(data.text, name);
 
-      // O rebo responde apenas se consegui chegar a uma conclusao
-      // sobre a pergunta do usuario
-      if(serverAnswer = Robot.ask() ){
-        socket.emit('server:answer', serverAnswer);
-
-        socket.broadcast.emit('server:answer', serverAnswer);
-      }
+      // Pergunta ao robo
+      Robot.ask(function(response) {
+        socket.emit('server:answer', response);
+        socket.broadcast.emit('server:answer', response);
+      });
 
     }, 2000);
   });

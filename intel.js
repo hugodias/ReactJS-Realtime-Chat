@@ -16,7 +16,7 @@ module.exports = {
     return this.username;
   },
 
-  answers: function () {
+  theories: function () {
     return {
             // Qual a idade do robo
             "((.*)?(você|voce|sua)(.*)?(idade|anos)(.*)?)": {

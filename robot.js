@@ -12,30 +12,30 @@ module.exports = function(question, username) {
   AI.setUsername(username);
 
   return {
-    ask: function() {
+    ask: function(callback) {
+      var answer = false;
 
-      var answers = AI.answers();
-
+      // Lista de teorias com perguntas e respostas
+      var theories = AI.theories();
+      
       // Faz o loop em todas as perguntas
-      for (var key in answers) {
+      for (var key in theories) {
 
         // Identifica potenciais respostas atraves de expressao regular
-        var r = new RegExp(key, "ig");
+        var theory = new RegExp(key, "ig");
 
         // Retorna apenas se encontrada uma resposta para a pergunta
-        if(question.match(r) != null) {
-
-          return answers[key];
+        if(question.match(theory) != null) {
+          answer = theories[key];
         }
       }
 
-      // Opcional => O robo pode ter uma resposta padrao caso nao encontre uma resposta
-      // para a pergunta
-      if(defaultAnswer) {
-        return defaultAnswer;  
-      }
-      
-      return false;
+      // Caso nao tenha respondido a pergunta, usa a resposta padrao
+      if(!answer)
+        answer = defaultAnswer;
+
+      // Callback
+      callback(answer);
     }
   };
 }
